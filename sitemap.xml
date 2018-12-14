@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://www.lunatic.wang/about/index.html</loc>
+    
+    <lastmod>2018-12-14T01:50:34.670Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://www.lunatic.wang/posts/4663/</loc>
     
     <lastmod>2018-12-13T10:11:18.297Z</lastmod>
@@ -96,13 +103,6 @@
     <loc>http://www.lunatic.wang/posts/bc19ab07/</loc>
     
     <lastmod>2018-05-30T16:28:41.185Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.lunatic.wang/about/index.html</loc>
-    
-    <lastmod>2018-03-08T09:38:33.524Z</lastmod>
     
   </url>
   
