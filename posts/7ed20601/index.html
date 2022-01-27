@@ -1,0 +1,141 @@
+<!DOCTYPE html><html class="theme-next pisces use-motion" lang="zh-Hans"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"><meta name="theme-color" content="#222"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link href="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet" type="text/css"><link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.2/css/font-awesome.min.css" rel="stylesheet" type="text/css"><link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css"><link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4"><link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222"><meta name="keywords" content="杂碎,Python,爬虫,"><meta name="description" content="Demo终于开始学习Python的爬虫，刚刚入门。但是现在对于我来说一般的静态网站爬下来没有问题了。所以来说说这几天三个小Dome的思路。"><meta name="keywords" content="杂碎,Python,爬虫"><meta property="og:type" content="article"><meta property="og:title" content="Python 爬虫Start"><meta property="og:url" content="http://www.lunatic.wang/posts/7ed20601/index.html"><meta property="og:site_name" content="Soft Lunatic"><meta property="og:description" content="Demo终于开始学习Python的爬虫，刚刚入门。但是现在对于我来说一般的静态网站爬下来没有问题了。所以来说说这几天三个小Dome的思路。"><meta property="og:locale" content="zh-Hans"><meta property="og:image" content="http://img.lunatic.wang/WZ.PNG"><meta property="og:image" content="http://img.lunatic.wang/%E7%88%AC%E5%8F%96%E4%B8%80.png"><meta property="og:image" content="http://img.lunatic.wang/TIM%E6%88%AA%E5%9B%BE20180315222946.png"><meta property="og:image" content="http://img.lunatic.wang/DoubanMovieTOP250.png"><meta property="og:image" content="http://img.lunatic.wang/CatEyeMovieDome.png"><meta property="og:image" content="http://img.lunatic.wang/12.PNG"><meta property="og:image" content="http://img.lunatic.wang/2.PNG"><meta property="og:image" content="http://img.lunatic.wang/4.PNG"><meta property="og:image" content="http://img.lunatic.wang/3.PNG"><meta property="og:image" content="http://img.lunatic.wang/3DM%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.PNG"><meta property="og:updated_time" content="2018-12-13T09:37:20.000Z"><meta name="twitter:card" content="summary"><meta name="twitter:title" content="Python 爬虫Start"><meta name="twitter:description" content="Demo终于开始学习Python的爬虫，刚刚入门。但是现在对于我来说一般的静态网站爬下来没有问题了。所以来说说这几天三个小Dome的思路。"><meta name="twitter:image" content="http://img.lunatic.wang/WZ.PNG"><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script><script type="text/javascript" id="hexo.configurations">var NexT=window.NexT||{},CONFIG={root:"/",scheme:"Pisces",version:"5.1.4",sidebar:{position:"left",display:"post",offset:12,b2t:!1,scrollpercent:!1,onmobile:!1},fancybox:!0,tabs:!0,motion:{enable:!0,async:!1,transition:{post_block:"fadeIn",post_header:"slideDownIn",post_body:"slideDownIn",coll_header:"slideLeftIn",sidebar:"slideUpIn"}},duoshuo:{userId:"0",author:"博主"},algolia:{applicationID:"",apiKey:"",indexName:"",hits:{per_page:10},labels:{input_placeholder:"Search for Posts",hits_empty:"We didn't find any results for the search: ${query}",hits_stats:"${hits} results found in ${time} ms"}}}</script><link rel="canonical" href="http://www.lunatic.wang/posts/7ed20601/"><title>Python 爬虫Start | Soft Lunatic</title><script type="text/javascript">var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?2664c75bba2721d1ad4baad6f1baf6f5";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script></head><body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans"><div class="container sidebar-position-left page-post-detail"><div class="headband"></div><header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="header-inner"><div class="site-brand-wrapper"><div class="site-meta"><div class="custom-logo-site-title"><a href="/" class="brand" rel="start"><span class="logo-line-before"><i></i></span> <span class="site-title">Soft Lunatic</span> <span class="logo-line-after"><i></i></span></a></div><h1 class="site-subtitle" itemprop="description"></h1></div><div class="site-nav-toggle"><button><span class="btn-bar"></span> <span class="btn-bar"></span> <span class="btn-bar"></span></button></div></div><nav class="site-nav"><ul id="menu" class="menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i><br>首页</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i><br>标签</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i><br>归档</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i><br>关于</a></li></ul></nav></div></header><main id="main" class="main"><div class="main-inner"><div class="content-wrap"><div id="content" class="content"><div id="posts" class="posts-expand"><article class="post post-type-normal" itemscope itemtype="http://schema.org/Article"><div class="post-block"><link itemprop="mainEntityOfPage" href="http://www.lunatic.wang/posts/7ed20601/"><span hidden itemprop="author" itemscope itemtype="http://schema.org/Person"><meta itemprop="name" content="Lunatic"><meta itemprop="description" content=""><meta itemprop="image" content="http://cdn.lunatic.wang/005FOq3Igy1fmk6tsb12oj30hs0hr756.jpg"></span><span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization"><meta itemprop="name" content="Soft Lunatic"></span><header class="post-header"><h2 class="post-title" itemprop="name headline">Python 爬虫Start</h2><div class="post-meta"><span class="post-time"><span class="post-meta-item-icon"><i class="fa fa-calendar-o"></i> </span><span class="post-meta-item-text">发表于</span> <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T22:11:32+08:00">2018-03-15</time></span></div></header><div class="post-body" itemprop="articleBody"><p><img src="http://img.lunatic.wang/WZ.PNG" alt=""></p><h3 id="Demo"><a href="#Demo" class="headerlink" title="Demo"></a>Demo</h3><p>终于开始学习Python的爬虫，刚刚入门。但是现在对于我来说一般的静态网站爬下来没有问题了。<br></p><p>所以来说说这几天三个小Dome的思路。</p><a id="more"></a><h2 id="豆瓣电影的TOP250"><a href="#豆瓣电影的TOP250" class="headerlink" title="豆瓣电影的TOP250"></a>豆瓣电影的TOP250</h2><p>第一个小Dome是“豆瓣电影的TOP250”的爬取，因为喜欢看电影，所以选了豆瓣来爬。用到的也是最基础的requests库以及re，辅助于正则表达式。最开始对正则还是有所压力的，但是接触之后才发现其实简单的爬取所需要的正则挺简单。<br></p><h3 id="首先"><a href="#首先" class="headerlink" title="首先"></a>首先</h3><p>我们需要一口进入到豆瓣电影，一般而言就是TOP250的首页：<a href="https://movie.douban.com/top250?start=0" target="_blank" rel="noopener">https://movie.douban.com/top250?start=0</a>，发现start后的值其实就是翻转的页数，也就是说当“start=25”跳转到下一页。为什么是25呢？因一页有25部电影啊~然后我通过观察发现每一页的布局整体而言是相同的，也就是说只要我们能够爬取一页我们需要的信息，那么通过遍历我们也就获得了所有需要的电影信息。<br>我们需要什么？</p><ul><li>电影名称</li><li>导演</li><li>主演</li><li>评分</li><li>评价人数</li><li>海报<br><img src="http://img.lunatic.wang/%E7%88%AC%E5%8F%96%E4%B8%80.png" alt=""><h3 id="分析这些信息所在页面的位置"><a href="#分析这些信息所在页面的位置" class="headerlink" title="分析这些信息所在页面的位置"></a>分析这些信息所在页面的位置</h3></li></ul><p>通过chrome（或者别的浏览器）的检查，一部电影的信息全部在一个li标签下，那么知道这些信息之后我们就可以通过正则表达式来筛选我们需要的信息。<br><img src="http://img.lunatic.wang/TIM%E6%88%AA%E5%9B%BE20180315222946.png" alt=""></p><pre><code>def get_one_page(url):#页数选择
+    try:
+        response=requests.get(url)
+        if response.status_code == 200:
+            return response.text
+        return None
+    except RequestException:
+        return None
+def parse_one_page(html):
+    pattern = re.compile(&apos;&lt;img.*?src=&quot;(.*?)&quot;.*?title&quot;&gt;(.*?)\
+        &lt;/span&gt;.*?&quot;&quot;&gt;(.*?)&lt;.p&gt;.*?age&quot;&gt;(.*?)&lt;/span&gt;.*?\
+        &lt;span&gt;(.*?)&lt;/span&gt;&apos;, re.S)
+    items = re.findall(pattern, html)
+    for item in items:
+        print(item)
+
+def main(url):#主方法
+
+    html = get_one_page(url)
+    parse_one_page(html)
+    # print(url)
+
+if __name__ == &apos;__main__&apos;:
+    url = &apos;https://movie.douban.com/top250?start=&apos;
+    url1=&apos;&amp;filter=&apos;
+    for i in range(0, 225, 25):
+        url3 = url+str(i)+url1
+        main(url3)
+</code></pre><p>‘response=requests.get(url)’,requests.get(url)会解码服务器的内容，’response.text’将网站的源码解析出来。’re.compile()’的两个参数分别是正则表达式，和跨行。没有re.S是不能进行跨行搜索的。然后在将传到’re.findall()’查找所有正则表达式里的信息，然后进行输出，我们得到的’items = re.findall(pattern, html)’是一个结果集，所以需要遍历。</p><h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p><img src="http://img.lunatic.wang/DoubanMovieTOP250.png" alt=""><br><br></p><h2 id="爬取猫眼电影TOP100"><a href="#爬取猫眼电影TOP100" class="headerlink" title="爬取猫眼电影TOP100"></a>爬取猫眼电影TOP100</h2><p>猫眼电大体上与豆瓣电影的方法相同，只不过我试着把数据存放在数据库中。</p><h3 id="数据库-test"><a href="#数据库-test" class="headerlink" title="数据库.test"></a>数据库.test</h3><pre><code>def get_page(url):##将爬取到的数据存入自己的数据库
+    html = requests.get(url, headers=headers)
+    # Mysql = Set_Mysql()
+    # Mysql.add(Mysql.cursor,data)
+    connect = pymysql.Connect(
+        host=&apos;xxx.xxx.xxx.xxx&apos;,
+        port=3306,
+        user=&apos;root&apos;,
+        passwd=&apos;root&apos;,
+        db=&apos;Python&apos;,
+        charset=&apos;utf8&apos;
+    )
+    cursor = connect.cursor()
+
+
+    for item in requstst_paly(html.text):
+        name = item.get(&apos;name&apos;)
+        foot = item.get(&apos;foot&apos;)
+        time = item.get(&apos;time&apos;)
+        mark = item.get(&apos;mark&apos;)
+        img = item.get(&apos;img&apos;)
+        data = (name, foot, time, mark, img)
+        sql = &quot;INSERT INTO CatEyeMovie (MovieName, Protagonist
+            , ReleasedTime
+            ,Score,Poster) VALUES ( &apos;%s&apos;, &apos;%s&apos;, &apos;%s&apos;,&apos;%s&apos;,&apos;%s&apos;)&quot;
+        cursor.execute(sql % data)
+        print(mark)
+
+    connect.commit()
+
+
+def requstst_paly(html):##用正则表达式提取信息，使用“yield”创造字典
+    pattern = re.compile(
+        &apos;&lt;img data-src=&quot;(.*?)@.*?&quot;.*?&quot;name&quot;.*?&quot;&gt;/
+        (.*?)&lt;/a&gt;.*?star&quot;&gt;(.*?)&lt;/p&gt;.*?time&quot;&gt;/
+        (.*?)&lt;/p&gt;.*?ger&quot;&gt;(\d.).*?&quot;&gt;(\d)&lt;/i&gt;&apos;,  re.S)
+    items = re.findall(pattern, html)
+
+    for movie in items:
+        yield {
+            &apos;name&apos;: movie[1],
+            &apos;foot&apos;: movie[2].strip()[3:],
+            &apos;time&apos;: movie[3].strip()[5:],
+            &apos;mark&apos;: movie[4] + movie[5],
+            &apos;img&apos;: movie[0]
+        }
+</code></pre><p>我们创造一个构造器，将爬取到的信息存到字典。</p><pre><code>for movie in items:
+    yield {
+        &apos;name&apos;: movie[1],
+        &apos;foot&apos;: movie[2].strip()[3:],
+        &apos;time&apos;: movie[3].strip()[5:],
+        &apos;mark&apos;: movie[4] + movie[5],
+        &apos;img&apos;: movie[0]
+    }
+</code></pre><p>因为对Python还是不很熟悉，原本想写个类来封装数据库链接，但是后来发现对于我来说不是很好实现，索性就加入到方法中了。需要注意的是在加入’import pymysql.cursors’，还有在创建表的时候需要注意字符个数，不然就会报错，不然就很难受~</p><h3 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h3><p><img src="http://img.lunatic.wang/CatEyeMovieDome.png" alt=""><br><br><br><br></p><h2 id="爬取3DM游戏排行榜迅雷下载地址"><a href="#爬取3DM游戏排行榜迅雷下载地址" class="headerlink" title="爬取3DM游戏排行榜迅雷下载地址"></a>爬取3DM游戏排行榜迅雷下载地址</h2><p>室友说：诶，你最近在学爬虫？你帮我把游戏的下载地址爬取下来吧，不然每次都要点很多网站。<br><br>有练手的机会当然欣然答应。</p><h3 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h3><p>在找寻游戏下载过程中发现，一款在3DM中的游戏，真实的下载地址是需要点击三个页面才能找到的。这很繁琐，而且3DM和游侠下载界面也不够友好。</p><p>这让我们很头疼~<br><br>但是这次的难度在于我刚接手的时候对“onclick”，因为事件告诉我们他是动态加载的，其次不能马上通过return一个完整的静态网页，因为事件还未加载。而且也打算用更简单的BeautifulSoup库来完成。</p><h4 id="一"><a href="#一" class="headerlink" title="一"></a>一</h4><p>通过<a href="http://dl.3dmgame.com/pc/click_desc/" target="_blank" rel="noopener">http://dl.3dmgame.com/pc/click_desc/</a>我们得到第一张图的结果，分析页面列表的游戏主页面的url，然后加载到游戏主页面得到游戏的相关信息，因为很多游戏都不相同，我也懒的做分情况处理，所以就只是获取了游戏名称。<br><img src="http://img.lunatic.wang/12.PNG" alt=""></p><h4 id="二"><a href="#二" class="headerlink" title="二"></a>二</h4><p>在得到游戏的主页面并且得到游戏名称，那么我们就要找到游戏的下载跳转。但是前面我说过，下载页面的地址是通过‘onclick’来动态加载的，直接获取是获取不到的，那么我们能不能用浏览器来模拟点击然后得到跳转地址呢？<br><br>答案是可以，这里需要一个selenium库来模拟浏览器的点击然后在获得下载地址的跳转。<br><img src="http://img.lunatic.wang/2.PNG" alt=""><br>onclick中的showXiazai()方法来实现下载页面跳转。<br><img src="http://img.lunatic.wang/4.PNG" alt=""></p><h4 id="三"><a href="#三" class="headerlink" title="三"></a>三</h4><p>得到了下载后的地址就可以为所欲为了。在该页面中有三个下载选项分别是：极速下载，迅雷链接下载，网盘下载。因为迅雷对下载的友好程度还是比较高，而且很多游戏不一定都有极速下载以及网盘下载，所以选用迅雷的下载地址作为return。</p><p><img src="http://img.lunatic.wang/3.PNG" alt=""></p><h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><pre><code>def fater_url(url):
+    # 游戏页面链接获取
+    rosepse = requests.get(url)
+    soup = BeautifulSoup(rosepse.text,&apos;lxml&apos;)
+
+    href = soup.select(&apos;div.text &gt; h2 &gt; a&apos;)
+    for i in href:
+        son_url(i.get(&apos;href&apos;))
+
+
+# 进入单个游戏界面
+def son_url(url):
+    son_rosepse = requests.get(url)
+    son_rosepse.encoding = &apos;utf-8&apos;
+    #print(son_rosepse.text)
+    #time.sleep(10)
+    son_suop = BeautifulSoup(son_rosepse.text, &apos;lxml&apos;)
+    game_name = son_suop.select(&apos;div.game_wrap &gt; h1&apos;)
+    down_game = son_suop.select(&apos;#xzhzdownurl&apos;)# 找到下载页面，进行分析
+    hard = &apos;http://so.hyds360.com&apos;
+    for j in down_game:
+        # 获取游戏名
+        print(game_name[0].text)
+        f = open(&apos;game.txt&apos;, &apos;a+&apos;, encoding=&apos;utf-8&apos;)
+        f.write(game_name[0].text+&apos;\n&apos;)
+        f.close()
+        #加入判断，某些页面的链接会失去“http://so.hyds360.com”的头，手动加上。
+        if &apos;http&apos; in j.get(&apos;value&apos;):
+            grandson_url(j.get(&apos;value&apos;))# 分析下载页面
+        else:
+            new_url = hard+j.get(&apos;value&apos;)
+            grandson_url(new_url)
+
+
+
+def grandson_url(html):
+    if len(html):
+        grandson_rosepse = requests.get(html)
+        grandson_rosepse.encoding = &apos;utf-8&apos;
+        grandson_suop = BeautifulSoup(grandson_rosepse.text, &apos;lxml&apos;)
+        # 获取次级下载页面
+        grandson_url = grandson_suop.select(&apos;a.result_down&apos;) 
+        if grandson_url != None:
+            str = grandson_url[0][&apos;href&apos;]
+            down_rosepse = requests.get(str)
+            down_rosepse.encoding = &apos;utf-8&apos;
+            grandson_suop = BeautifulSoup(down_rosepse.text, &apos;lxml&apos;)
+            down = grandson_suop.select(&apos;body &gt; 
+                div.yxhz_n1_container &gt; div.n1_content &gt; 
+                # 获取真实下载页面
+                a.gameDown.down_xl&apos;)
+            print()
+            f = open(&apos;game.txt&apos;, &apos;a+&apos;, encoding=&apos;utf-8&apos;)
+            if down.__len__() == 0:
+                f.write(&apos;没有迅雷下载地址！&apos; + &apos;\n&apos;)
+            else:
+                f.write(down[0][&apos;href&apos;] + &apos;\n&apos;)
+                f.close()
+</code></pre><p>在实际操作中会解决和优化很多问题，比如“响应事件”的问题。selenium调用chrome进行模拟点击的时候虽然可以，但是预期效果一直未达到，在仔细的分析网页源代码后发现跳转的下载地址在最后，而并非页面显示的对应位置，那么也就无需selenium。<br><br>本次也将结果写入了文本文档，方便查询。</p><h3 id="结果-2"><a href="#结果-2" class="headerlink" title="结果"></a>结果</h3><p><img src="http://img.lunatic.wang/3DM%E4%B8%8B%E8%BD%BD%E5%9C%B0%E5%9D%80.PNG" alt=""></p><h2 id="杂碎"><a href="#杂碎" class="headerlink" title="杂碎"></a>杂碎</h2><p>总体而言这三个小Dome都较为简单，但是如果作为入门的练手项目也是足够了。中间遇到了许多问题，都一点点的解决，不论是直接还是幽暗曲折的达到结果总归是好的。但是我难免还是想更加优化，本事不够，修炼不够。还是需要做很多很多。<br>还有重要一点要学会开始看官方文档，这样也能够更加透彻的明白作者的心血和巧妙的构思。</p><h2 id="github"><a href="#github" class="headerlink" title="github"></a>github</h2><p>代码我都上传到github上，以备能有幸被其他初学者学习，也能回头对自己代码进行分析。<br>Github: <a href="https://github.com/LunaticTian/Python-reptilian-Test" target="_blank" rel="noopener">https://github.com/LunaticTian/Python-reptilian-Test</a></p><h2 id="下一步计划"><a href="#下一步计划" class="headerlink" title="下一步计划"></a>下一步计划</h2><p>完成网易云音乐的用户喜爱音乐的爬寻~</p></div><footer class="post-footer"><div class="post-tags"><a href="/tags/杂碎/" rel="tag"># 杂碎</a> <a href="/tags/Python/" rel="tag"># Python</a> <a href="/tags/爬虫/" rel="tag"># 爬虫</a></div><div class="post-nav"><div class="post-nav-next post-nav-item"><a href="/posts/4663/" rel="next" title="紧凑"><i class="fa fa-chevron-left"></i> 紧凑</a></div><span class="post-nav-divider"></span><div class="post-nav-prev post-nav-item"><a href="/posts/2d8de040/" rel="prev" title="网易云的Python爬取">网易云的Python爬取 <i class="fa fa-chevron-right"></i></a></div></div></footer></div></article><div class="post-spread"></div></div></div></div><div class="sidebar-toggle"><div class="sidebar-toggle-line-wrap"><span class="sidebar-toggle-line sidebar-toggle-line-first"></span> <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span> <span class="sidebar-toggle-line sidebar-toggle-line-last"></span></div></div><aside id="sidebar" class="sidebar"><div class="sidebar-inner"><ul class="sidebar-nav motion-element"><li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">文章目录</li><li class="sidebar-nav-overview" data-target="site-overview-wrap">站点概览</li></ul><section class="site-overview-wrap sidebar-panel"><div class="site-overview"><div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person"><img class="site-author-image" itemprop="image" src="http://cdn.lunatic.wang/005FOq3Igy1fmk6tsb12oj30hs0hr756.jpg" alt="Lunatic"><p class="site-author-name" itemprop="name">Lunatic</p><p class="site-description motion-element" itemprop="description"></p></div><nav class="site-state motion-element"><div class="site-state-item site-state-posts"><a href="/archives/"><span class="site-state-item-count">26</span> <span class="site-state-item-name">日志</span></a></div><div class="site-state-item site-state-tags"><a href="/tags/index.html"><span class="site-state-item-count">17</span> <span class="site-state-item-name">标签</span></a></div></nav><div class="links-of-author motion-element"><span class="links-of-author-item"><a href="https://github.com/lunatictian" target="_blank" title="GitHub"><i class="fa fa-fw fa-github"></i>GitHub</a> </span><span class="links-of-author-item"><a href="http://www.weibo.com/p/1005055198510510?from=qrcode&frwbqr=53" target="_blank" title="微博"><i class="fa fa-fw fa-globe"></i>微博</a> </span><span class="links-of-author-item"><a href="https://www.douban.com/people/62879813/" target="_blank" title="豆瓣"><i class="fa fa-fw fa-globe"></i>豆瓣</a> </span><span class="links-of-author-item"><a href="http://music.163.com/#/user/home?id=99962953" target="_blank" title="网易云"><i class="fa fa-fw fa-globe"></i>网易云</a></span></div></div></section><section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active"><div class="post-toc"><div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Demo"><span class="nav-number">1.</span> <span class="nav-text">Demo</span></a></li></ol><li class="nav-item nav-level-2"><a class="nav-link" href="#豆瓣电影的TOP250"><span class="nav-number"></span> <span class="nav-text">豆瓣电影的TOP250</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#首先"><span class="nav-number">1.</span> <span class="nav-text">首先</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分析这些信息所在页面的位置"><span class="nav-number">2.</span> <span class="nav-text">分析这些信息所在页面的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果"><span class="nav-number">3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取猫眼电影TOP100"><span class="nav-number"></span> <span class="nav-text">爬取猫眼电影TOP100</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数据库-test"><span class="nav-number">1.</span> <span class="nav-text">数据库.test</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果-1"><span class="nav-number">2.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#爬取3DM游戏排行榜迅雷下载地址"><span class="nav-number"></span> <span class="nav-text">爬取3DM游戏排行榜迅雷下载地址</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#分析"><span class="nav-number">1.</span> <span class="nav-text">分析</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一"><span class="nav-number">1.1.</span> <span class="nav-text">一</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二"><span class="nav-number">1.2.</span> <span class="nav-text">二</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三"><span class="nav-number">1.3.</span> <span class="nav-text">三</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#结果-2"><span class="nav-number">3.</span> <span class="nav-text">结果</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#杂碎"><span class="nav-number"></span> <span class="nav-text">杂碎</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#github"><span class="nav-number"></span> <span class="nav-text">github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#下一步计划"><span class="nav-number"></span> <span class="nav-text">下一步计划</span></a></li></div></div></section></div></aside></div></main><footer id="footer" class="footer"><div class="footer-inner"><div class="copyright">&copy; <span itemprop="copyrightYear">2022</span> <span class="with-love"><i class="fa fa-user"></i> </span><span class="author" itemprop="copyrightHolder">Lunatic</span></div><div class="theme-info"><div class="powered-by"></div><span class="post-count">博客全站共44.6k字</span></div><div class="|powered-by"></div><div class="|powered-by"><span><a href="http://www.beian.miit.gov.cn/" target="_blank" style="font-weight:700">鄂ICP备17030698号-1</a></span></div></div></footer><div class="back-to-top"><i class="fa fa-arrow-up"></i></div></div><script type="text/javascript">"[object Function]"!==Object.prototype.toString.call(window.Promise)&&(window.Promise=null)</script><script type="text/javascript" src="//cdn.jsdelivr.net/jquery/2.1.3/jquery.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/fastclick/1.0.6/fastclick.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/jquery.lazyload/1.9.3/jquery.lazyload.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.ui.min.js"></script><script type="text/javascript" src="//cdn.jsdelivr.net/fancybox/2.1.5/jquery.fancybox.pack.js"></script><script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script><script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script><script>!function(){var t=document.createElement("script"),e=window.location.protocol.split(":")[0];t.src="https"===e?"https://zz.bdstatic.com/linksubmit/push.js":"http://push.zhanzhang.baidu.com/push.js";var s=document.getElementsByTagName("script")[0];s.parentNode.insertBefore(t,s)}()</script></body></html>
